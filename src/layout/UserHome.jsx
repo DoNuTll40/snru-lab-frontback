@@ -2,20 +2,20 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-function formatDate(dateString) {
-    const options = {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      };
-    const date = new Date(dateString);
-    return date.toLocaleDateString("th-TH", options);
-}
-
 export default function UserHome() {
 
     const [todos, setTodos] = useState([])
+
+    function formatDate(dateString) {
+        const options = {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+        };
+        const date = new Date(dateString);
+        return date.toLocaleDateString("th-TH", options);
+    }
 
     useEffect(() => {
         const run = async () => {
